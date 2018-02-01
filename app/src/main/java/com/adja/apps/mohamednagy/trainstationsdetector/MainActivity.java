@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.adja.apps.mohamednagy.trainstationsdetector.geofence_area.GeofenceArea;
+import com.adja.apps.mohamednagy.trainstationsdetector.geofence_sys.GeofenceUtility;
+import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
 import com.google.android.gms.location.Geofence;
 
 import java.util.ArrayList;
