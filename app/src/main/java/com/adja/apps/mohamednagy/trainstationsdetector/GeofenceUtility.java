@@ -36,7 +36,7 @@ public class GeofenceUtility {
         mGeofencingClient = new GeofencingClient(mContext);
     }
 
-    public Geofence create(long latitude, long longitude, String id) {
+    public Geofence create(double latitude, double longitude, String id) {
         return new Geofence.Builder()
                 .setRequestId(id)
                 .setCircularRegion(latitude, longitude, DETECTION_RADIUS)
