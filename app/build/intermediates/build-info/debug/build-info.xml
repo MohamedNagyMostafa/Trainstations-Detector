@@ -6,22 +6,22 @@
     density="xxxhdpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1517520617637"
+    timestamp="1517601206218"
     token="-8035082078468432283"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1980" />
+        duration="285" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1048" />
+        duration="342" />
     <task
         name="verifier"
-        duration="2" />
+        duration="27" />
 
     <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1517520617637"
+        timestamp="1517601206218"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"

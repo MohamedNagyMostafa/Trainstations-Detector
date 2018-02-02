@@ -4,13 +4,16 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingClient;
 import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -22,7 +25,7 @@ import java.util.List;
 
 public class GeofenceUtility {
 
-    private static final float DETECTION_RADIUS = 70f;
+    private static final float DETECTION_RADIUS = 700f;
     private GeofencingClient mGeofencingClient;
     private PendingIntent mGeoPendingIntent;
     private final Context mContext;
@@ -31,7 +34,7 @@ public class GeofenceUtility {
     public GeofenceUtility(Context context) {
         mContext = context;
         TAG = mContext.getPackageName();
-        mGeofencingClient = new GeofencingClient(mContext);
+        mGeofencingClient = LocationServices.getGeofencingClient(mContext);
     }
 
     public Geofence create(double latitude, double longitude, String id) {
@@ -68,21 +71,28 @@ public class GeofenceUtility {
         return mGeoPendingIntent;
     }
 
-    public boolean addingSupport(List<Geofence> geofenceList) {
+    public boolean addingSupport(final List<Geofence> geofenceList) {
         // Check for android 6.0 and upper.
-        if(PermissionHandle.checkPermission(PermissionHandle.ACCESS_FINE_LOCATION_PERMISSION, mContext)) {
+        if(PermissionHandle.checkPermission(PermissionHandle.ACCESS_FINE_LOCATION_PERMISSION, mContext) &&
+                PermissionHandle.checkPermission(PermissionHandle.ACCESS_COARSE_LOCATION_PERMISSION, mContext)) {
             mGeofencingClient.addGeofences(getRequest(geofenceList), getGeofencePendingIntent())
                     .addOnSuccessListener((Activity) mContext, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Log.e(TAG, "add geo succ");
+                            Log.e("check4","donnnnnnnnnnnnnnnne");
+                            Toast.makeText(mContext, " done " + geofenceList.size(), Toast.LENGTH_LONG).show();
+
                         }
                     }).addOnFailureListener((Activity) mContext, new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, e.getMessage());
+                    Log.e(TAG, e.toString());
+                    Log.e("check3","donnnnnnnnnnnnnnnne");
+
                 }
             });
+            Log.e("check1","donnnnnnnnnnnnnnnne");
 
             return true;
         }
@@ -90,7 +100,7 @@ public class GeofenceUtility {
         return false;
     }
 
-    public void removeGeofence(List<Geofence> geofenceList){
+    public void removeGeofence(){
         mGeofencingClient.removeGeofences(getGeofencePendingIntent())
                 .addOnSuccessListener((Activity) mContext, new OnSuccessListener<Void>() {
                     @Override

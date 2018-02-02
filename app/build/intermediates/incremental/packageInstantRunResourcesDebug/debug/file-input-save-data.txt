@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Feb 01 13:30:44 PST 2018
+#Fri Feb 02 11:53:28 PST 2018
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=E\:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png
