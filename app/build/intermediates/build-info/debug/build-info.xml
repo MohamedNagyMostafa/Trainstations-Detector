@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="21"
+    abi="x86"
+    api-level="24"
     build-mode="FULL"
-    density="xxxhdpi"
+    density="xhdpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1517601206218"
+    timestamp="1517610968203"
     token="-8035082078468432283"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="285" />
+        duration="3487" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="342" />
+        duration="1186" />
     <task
         name="verifier"
-        duration="27" />
+        duration="6" />
 
     <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1517601206218"
+        timestamp="1517610968203"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"

@@ -69,4 +69,8 @@ public class GoogleClientService implements
         assert mGoogleApiClient != null;
         mGoogleApiClient.disconnect();
     }
+
+    public GoogleApiClient getGoogleApiClient(){
+        return mGoogleApiClient;
+    }
 }
