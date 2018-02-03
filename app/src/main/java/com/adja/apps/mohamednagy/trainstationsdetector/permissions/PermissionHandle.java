@@ -14,10 +14,11 @@ import android.support.v4.content.ContextCompat;
 public class PermissionHandle {
 
     public static final String ACCESS_FINE_LOCATION_PERMISSION = Manifest.permission.ACCESS_FINE_LOCATION;
+    public static final String ACCESS_COARSE_LOCATION_PERMISSION = Manifest.permission.ACCESS_COARSE_LOCATION;
     public static final int REQUEST_CODE = 1;
 
     public static boolean checkPermission(String permission, Context context){
-        return (ContextCompat.checkSelfPermission(context, ACCESS_FINE_LOCATION_PERMISSION)
+        return (ContextCompat.checkSelfPermission(context, permission)
                 == PackageManager.PERMISSION_GRANTED);
     }
 

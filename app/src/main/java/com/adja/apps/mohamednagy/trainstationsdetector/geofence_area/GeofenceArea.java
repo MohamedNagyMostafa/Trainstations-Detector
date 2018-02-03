@@ -6,6 +6,6 @@ package com.adja.apps.mohamednagy.trainstationsdetector.geofence_area;
  */
 
 public class GeofenceArea {
-    public static final Area FAISL_STATION = new Area(30.0115127, 31.1939694, "Faisl Station");
-    public static final Area CAIRO_UNIVERSITY_STATION = new Area(30.019019,31.2032391, "Cairo University Station");
+    public static final Area FAISL_STATION = new Area(30.0143063, 31.1870751, "Faisl Station");
+    public static final Area CAIRO_UNIVERSITY_STATION = new Area(31.1870751,30.0143063, "Cairo University Station");
 }
