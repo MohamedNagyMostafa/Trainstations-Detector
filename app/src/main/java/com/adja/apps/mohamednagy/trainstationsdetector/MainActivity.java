@@ -2,20 +2,19 @@ package com.adja.apps.mohamednagy.trainstationsdetector;
 
 
 import android.content.pm.PackageManager;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.adja.apps.mohamednagy.trainstationsdetector.geofence_area.GeofenceArea;
+import com.adja.apps.mohamednagy.trainstationsdetector.data.DataConnector;
+import com.adja.apps.mohamednagy.trainstationsdetector.data.GeofenceStations;
 import com.adja.apps.mohamednagy.trainstationsdetector.geofence_sys.GeofenceUtility;
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientCallback;
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientService;
 import com.adja.apps.mohamednagy.trainstationsdetector.location_service.LocationController;
 import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
+import com.adja.apps.mohamednagy.trainstationsdetector.properties.Subway;
 import com.google.android.gms.location.Geofence;
-import com.google.android.gms.location.LocationRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity
 
     private GeofenceUtility mGeofenceUtility;
     private List<Geofence> mGeofenceList;
-    private LocationRequest mLocationRequest;
     private DataConnector mDataConnector;
 
 
@@ -37,24 +35,27 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Subway subway = new Subway() {
+            @Override
+            public void onMove(Subway newSubwayData) {
+
+            }
+
+            @Override
+            public void onStation(Subway newSubwayData) {
+
+            }
+        };
+
         mGeofenceUtility = new GeofenceUtility(this);
         mGeofenceList = new ArrayList<>();
-        mDataConnector = new DataConnector();
+        mDataConnector = new DataConnector(subway);
 
     }
 
     private void defineGeofencePlaces(){
-        mGeofenceList.add(mGeofenceUtility.create(
-                GeofenceArea.FAISL_STATION.getLatitude(),
-                GeofenceArea.FAISL_STATION.getLongitude(),
-                GeofenceArea.FAISL_STATION.getName()));
-
-        mGeofenceList.add(mGeofenceUtility.create(
-                GeofenceArea.CAIRO_UNIVERSITY_STATION.getLatitude(),
-                GeofenceArea.CAIRO_UNIVERSITY_STATION.getLongitude(),
-                GeofenceArea.CAIRO_UNIVERSITY_STATION.getName()));
-
-
+        mGeofenceList.add(mGeofenceUtility.create(GeofenceStations.FAISL_STATION_ID));
+        mGeofenceList.add(mGeofenceUtility.create(GeofenceStations.CAIRO_UNIVERSITY_STATION_ID));
     }
 
     @Override
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity
                         grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                     assert mGeofenceList != null;
                     assert mGeofenceUtility != null;
-                    Log.e("check","donnnnnnnnnnnnnnnne");
+
                     mGeofenceUtility.addingSupport(
                             mGeofenceList,
                             mDataConnector.getEnterStationHandler(),

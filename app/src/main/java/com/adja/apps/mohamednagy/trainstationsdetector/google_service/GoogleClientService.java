@@ -1,12 +1,9 @@
 package com.adja.apps.mohamednagy.trainstationsdetector.google_service;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -52,9 +49,7 @@ public class GoogleClientService implements
     }
 
     @Override
-    public void onConnectionSuspended(int i) {
-
-    }
+    public void onConnectionSuspended(int i) {}
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
@@ -68,9 +63,5 @@ public class GoogleClientService implements
     public void googleApiClientDisconnect(){
         assert mGoogleApiClient != null;
         mGoogleApiClient.disconnect();
-    }
-
-    public GoogleApiClient getGoogleApiClient(){
-        return mGoogleApiClient;
     }
 }

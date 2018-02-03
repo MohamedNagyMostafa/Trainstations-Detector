@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Handler;
 import android.os.Messenger;
 import android.support.annotation.NonNull;
@@ -12,7 +11,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.adja.apps.mohamednagy.trainstationsdetector.DataConnector;
+import com.adja.apps.mohamednagy.trainstationsdetector.data.DataConnector;
+import com.adja.apps.mohamednagy.trainstationsdetector.data.GeofenceStations;
 import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingClient;
@@ -41,10 +41,13 @@ public class GeofenceUtility {
         mGeofencingClient = LocationServices.getGeofencingClient(mContext);
     }
 
-    public Geofence create(double latitude, double longitude, String id) {
+    public Geofence create(int stationId) {
         return new Geofence.Builder()
-                .setRequestId(id)
-                .setCircularRegion(latitude, longitude, DETECTION_RADIUS)
+                .setRequestId(GeofenceStations.getStationFromId(stationId).getAsStringid())
+                .setCircularRegion(
+                        GeofenceStations.getStationFromId(stationId).getLatitude(),
+                        GeofenceStations.getStationFromId(stationId).getLongitude(),
+                        DETECTION_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build();
