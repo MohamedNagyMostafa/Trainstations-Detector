@@ -2,6 +2,7 @@ package com.adja.apps.mohamednagy.trainstationsdetector;
 
 
 import android.content.pm.PackageManager;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     private GeofenceUtility mGeofenceUtility;
     private List<Geofence> mGeofenceList;
     private LocationRequest mLocationRequest;
+    private DataConnector mDataConnector;
 
 
     public MainActivity() {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
         mGeofenceUtility = new GeofenceUtility(this);
         mGeofenceList = new ArrayList<>();
+        mDataConnector = new DataConnector();
 
     }
 
@@ -50,6 +53,8 @@ public class MainActivity extends AppCompatActivity
                 GeofenceArea.CAIRO_UNIVERSITY_STATION.getLatitude(),
                 GeofenceArea.CAIRO_UNIVERSITY_STATION.getLongitude(),
                 GeofenceArea.CAIRO_UNIVERSITY_STATION.getName()));
+
+
     }
 
     @Override
@@ -63,7 +68,10 @@ public class MainActivity extends AppCompatActivity
                     assert mGeofenceList != null;
                     assert mGeofenceUtility != null;
                     Log.e("check","donnnnnnnnnnnnnnnne");
-                    mGeofenceUtility.addingSupport(mGeofenceList);
+                    mGeofenceUtility.addingSupport(
+                            mGeofenceList,
+                            mDataConnector.getEnterStationHandler(),
+                            mDataConnector.getExitStationHandler());
                 }
         }
     }
@@ -87,7 +95,11 @@ public class MainActivity extends AppCompatActivity
     public void onConnected() {
         defineGeofencePlaces();
 
-        boolean result = mGeofenceUtility.addingSupport(mGeofenceList);
+        boolean result = mGeofenceUtility.addingSupport(
+                mGeofenceList,
+                mDataConnector.getEnterStationHandler(),
+                mDataConnector.getExitStationHandler()
+        );
         new LocationController().execute(this);
         if (result)
             PermissionHandle.askPermission(this, PermissionHandle.ACCESS_FINE_LOCATION_PERMISSION,
