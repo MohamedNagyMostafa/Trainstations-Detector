@@ -3,7 +3,6 @@ package com.adja.apps.mohamednagy.trainstationsdetector.geofence_sys;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.adja.apps.mohamednagy.trainstationsdetector.data.DataConnector;
 import com.google.android.gms.location.Geofence;
@@ -28,7 +27,6 @@ public class GeofenceIntentService extends IntentService {
         assert geofencingEvent != null;
 
         if(geofencingEvent.hasError()){
-            Log.e(GEOFENCE_SERVICE, GEOFENCE_SERVICE +  geofencingEvent.getErrorCode());
             return;
         }
         int geofenceTransition = geofencingEvent.getGeofenceTransition();
@@ -43,8 +41,6 @@ public class GeofenceIntentService extends IntentService {
             case Geofence.GEOFENCE_TRANSITION_EXIT:
                 DataConnector.dataHandler(DataConnector.EXIT_HANDLER_CODE, intent, geofenceTrigger.getRequestId());
                 break;
-            default:
-                Log.e(GEOFENCE_SERVICE, "Invalid type");
         }
     }
 

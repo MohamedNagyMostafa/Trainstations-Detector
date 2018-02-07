@@ -13,8 +13,8 @@ public class GeofenceStations {
     public static final int CAIRO_UNIVERSITY_STATION_ID = 1;
 
     private static final Station[] SUBWAY_STATIONS = new Station[]{
-                new Station(30.0143063, 31.1870751, "Faisl Station", FAISL_STATION_ID),
-                new Station(31.1870751,30.0143063, "Cairo University Station", CAIRO_UNIVERSITY_STATION_ID)
+                new Station(30.017457, 31.203776, "Faisl Station", FAISL_STATION_ID),
+                new Station(30.026064,31.200976, "Cairo University Station", CAIRO_UNIVERSITY_STATION_ID)
     };
 
 

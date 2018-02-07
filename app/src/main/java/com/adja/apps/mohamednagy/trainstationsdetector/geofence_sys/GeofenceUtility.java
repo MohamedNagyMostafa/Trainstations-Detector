@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.os.Messenger;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.adja.apps.mohamednagy.trainstationsdetector.data.DataConnector;
@@ -29,7 +28,7 @@ import java.util.List;
 
 public class GeofenceUtility {
 
-    private static final float DETECTION_RADIUS = 700f;
+    private static final float DETECTION_RADIUS = 70f;
     private GeofencingClient mGeofencingClient;
     private PendingIntent mGeoPendingIntent;
     private final Context mContext;
@@ -92,20 +91,15 @@ public class GeofenceUtility {
                     .addOnSuccessListener((Activity) mContext, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Log.e(TAG, "add geo succ");
-                            Log.e("check4","donnnnnnnnnnnnnnnne");
-                            Toast.makeText(mContext, " done " + geofenceList.size(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(mContext, " set subway station succ No. " + geofenceList.size(), Toast.LENGTH_LONG).show();
 
                         }
                     }).addOnFailureListener((Activity) mContext, new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, e.toString());
-                    Log.e("check3","donnnnnnnnnnnnnnnne");
-
+                        Toast.makeText(mContext, " error... !! ", Toast.LENGTH_LONG).show();
                 }
             });
-            Log.e("check1","donnnnnnnnnnnnnnnne");
 
             return true;
         }
@@ -113,18 +107,17 @@ public class GeofenceUtility {
         return false;
     }
 
-    public void removeGeofence(){
-        mGeofencingClient.removeGeofences(getGeofencePendingIntent(null, null))
+    public void removeGeofence(Handler enterStationHandler, Handler exitStationHandler){
+
+        mGeofencingClient.removeGeofences(getGeofencePendingIntent(enterStationHandler, exitStationHandler))
                 .addOnSuccessListener((Activity) mContext, new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.e(TAG, "remove geo succ");
                     }
                 })
                 .addOnFailureListener((Activity) mContext, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "remove geo fail");
                     }
                 });
     }

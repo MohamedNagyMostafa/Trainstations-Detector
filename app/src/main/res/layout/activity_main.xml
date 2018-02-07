@@ -5,6 +5,5 @@
     android:layout_height="match_parent"
     tools:context="com.adja.apps.mohamednagy.trainstationsdetector.MainActivity">
 
-    <include layout="@layout/activity_main_container"/>
 
 </android.support.constraint.ConstraintLayout>

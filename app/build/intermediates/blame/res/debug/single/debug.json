@@ -572,10 +572,6 @@
         "source": "C:\\Users\\Mohamed Nagy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b97c817e475f462394fc021ec5ace66a\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_fragment.xml.flat",
-        "source": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\src\\main\\res\\layout\\activity_main_fragment.xml"
-    },
-    {
         "merged": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Mohamed Nagy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b97c817e475f462394fc021ec5ace66a\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -1138,10 +1134,6 @@
     {
         "merged": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\Mohamed Nagy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b97c817e475f462394fc021ec5ace66a\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_container.xml.flat",
-        "source": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\src\\main\\res\\layout\\activity_main_container.xml"
     },
     {
         "merged": "E:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",

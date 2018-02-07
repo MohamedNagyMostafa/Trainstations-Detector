@@ -11,8 +11,9 @@ public abstract class Subway {
     private Station mCurrentStation;
     private Station mNextStation;
     private Long mPreviousDuration;
+    public static final long NO_DATA = -1;
 
-    public Subway(){}
+    protected Subway(){}
 
     public void setCurrentStation(Station mCurrentStation) {
         this.mCurrentStation = mCurrentStation;
@@ -35,7 +36,10 @@ public abstract class Subway {
     }
 
     public Long getPreviousDuration() {
-        return mPreviousDuration;
+        if(mPreviousDuration != null)
+            return mPreviousDuration;
+
+        return NO_DATA;
     }
 
     enum State{

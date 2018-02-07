@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.adja.apps.mohamednagy.trainstationsdetector.data.DataConnector;
 import com.adja.apps.mohamednagy.trainstationsdetector.data.GeofenceStations;
@@ -12,6 +13,8 @@ import com.adja.apps.mohamednagy.trainstationsdetector.geofence_sys.GeofenceUtil
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientCallback;
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientService;
 import com.adja.apps.mohamednagy.trainstationsdetector.location_service.LocationController;
+import com.adja.apps.mohamednagy.trainstationsdetector.network.SendDataLoader;
+import com.adja.apps.mohamednagy.trainstationsdetector.network.SendDataLoaderHandler;
 import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
 import com.adja.apps.mohamednagy.trainstationsdetector.properties.Subway;
 import com.google.android.gms.location.Geofence;
@@ -34,16 +37,21 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final SendDataLoaderHandler SEND_DATA_LOADER_HANDLER =
+                new SendDataLoaderHandler(getApplicationContext());
 
-        Subway subway = new Subway() {
+        final Subway subway = new Subway() {
             @Override
             public void onMove(Subway newSubwayData) {
-
+                Toast.makeText(getBaseContext(), "Leave current station", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onStation(Subway newSubwayData) {
-
+                Toast.makeText(getBaseContext(), "arrive to next station duration is " +(int) (newSubwayData.getPreviousDuration()/1000) + " Sec.", Toast.LENGTH_LONG).show();
+                long durationData = newSubwayData.getPreviousDuration();
+                if(durationData != Subway.NO_DATA)
+                    sendDataToR(SEND_DATA_LOADER_HANDLER, newSubwayData.getPreviousDuration());
             }
         };
 
@@ -51,6 +59,18 @@ public class MainActivity extends AppCompatActivity
         mGeofenceList = new ArrayList<>();
         mDataConnector = new DataConnector(subway);
 
+    }
+
+    private void sendDataToR(SendDataLoaderHandler sendDataLoaderHandler, long timeInMills){
+        Bundle bundle = new Bundle();
+
+        bundle.putLong(
+                SendDataLoaderHandler.DATA_SEND_ID,
+                timeInMills);
+
+        getSupportLoaderManager().initLoader(
+                SendDataLoader.LOADER_ID, bundle,
+                sendDataLoaderHandler);
     }
 
     private void defineGeofencePlaces(){
@@ -79,7 +99,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onStop(){
-        mGeofenceUtility.removeGeofence();
+        mGeofenceUtility.removeGeofence(mDataConnector.getEnterStationHandler(), mDataConnector.getExitStationHandler());
         assert mGeofenceList != null;
         mGeofenceList.clear();
         GoogleClientService.getInstance().googleApiClientDisconnect();

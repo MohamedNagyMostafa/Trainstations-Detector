@@ -19,15 +19,15 @@ import java.util.Calendar;
 public class DataConnector {
     public static final String ENTER_HANDLER_CODE = "EnHn";
     public static final String EXIT_HANDLER_CODE = "ExHn";
-    public static final String TIME_IN_MILLIS_CODE = "Tn";
-    public static final String SUBWAY_STATION_CODE = "Sn";
+    private static final String TIME_IN_MILLIS_CODE = "Tn";
+    private static final String SUBWAY_STATION_CODE = "Sn";
 
     private Long mEnterStationTimeInMills;
     private Long mExitStationTimeInMills;
     private Handler mEnterStationHandler;
     private Handler mExitStationHandler;
 
-    DataConnector(final Subway subway){
+    public DataConnector(final Subway subway){
         mEnterStationHandler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
