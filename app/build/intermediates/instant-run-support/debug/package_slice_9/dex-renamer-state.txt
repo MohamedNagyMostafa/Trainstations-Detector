@@ -1,4 +1,4 @@
-#Wed Feb 07 01:03:38 PST 2018
-base.0=E\:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\29
+#Thu Feb 08 06:30:57 PST 2018
+base.0=E\:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 renamed.0=classes.dex
-file.0=E\:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\29\\classes.dex
+file.0=E\:\\Google Developer Challenge\\Course\\ud851-Exercises\\Lesson12-Visual-Polish\\TrainstationsDetector\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10\\classes.dex

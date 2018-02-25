@@ -6,25 +6,40 @@
     density="xhdpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1517993954218"
+    timestamp="1519595587951"
     token="-8035082078468432283"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="24133" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1361" />
+        duration="0" />
     <task
         name="verifier"
-        duration="1080" />
+        duration="0" />
 
     <artifact
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -36,36 +51,36 @@
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
         location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\outputs\apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
-    <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1517993954218"
+        timestamp="1519595587951"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -77,29 +92,14 @@
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
             location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-        <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Google Developer Challenge\Course\ud851-Exercises\Lesson12-Visual-Polish\TrainstationsDetector\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>
