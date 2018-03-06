@@ -12,6 +12,7 @@ import com.adja.apps.mohamednagy.trainstationsdetector.data.GeofenceStations;
 import com.adja.apps.mohamednagy.trainstationsdetector.geofence_sys.GeofenceUtility;
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientCallback;
 import com.adja.apps.mohamednagy.trainstationsdetector.google_service.GoogleClientService;
+import com.adja.apps.mohamednagy.trainstationsdetector.location_service.LocationController;
 import com.adja.apps.mohamednagy.trainstationsdetector.network.TcpClient;
 import com.adja.apps.mohamednagy.trainstationsdetector.permissions.PermissionHandle;
 import com.adja.apps.mohamednagy.trainstationsdetector.properties.Subway;
@@ -57,8 +58,8 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(getBaseContext(), "arrive to next station duration is " +(int) (newSubwayData.getPreviousDuration()/1000) + " Sec.", Toast.LENGTH_LONG).show();
 
                 long durationData = newSubwayData.getPreviousDuration();
-                if(durationData != Subway.NO_DATA)
-                    mTcpClient.sendMessage(String.valueOf(durationData));
+                mTcpClient.sendMessage(String.valueOf(durationData));
+                mTcpClient.run();
             }
         };
         mGeofenceUtility = new GeofenceUtility(this);
@@ -108,7 +109,6 @@ public class MainActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
         GoogleClientService.getInstance().build(this, this).googleApiClientConnect();
-        mTcpClient.run();
     }
 
 
@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity
                 mDataConnector.getEnterStationHandler(),
                 mDataConnector.getExitStationHandler()
         );
+        new LocationController().execute(this);
         if (!result)
             PermissionHandle.askPermission(this, PermissionHandle.ACCESS_FINE_LOCATION_PERMISSION,
                     PermissionHandle.ACCESS_COARSE_LOCATION_PERMISSION);
